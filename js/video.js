@@ -56,10 +56,13 @@ const loadVideos = () =>{
             card.classList= "card card-compact"
             card.innerHTML = `
             
-            <figure class=" ">
+            <figure class="relative ">
     <img class="w-full h-[200px] object-cover"
       src="${video.thumbnail}"
       alt="" />
+      <span class="absolute right-2 bottom-2 text-white bg-text p-1 rounded-sm">${video.others.
+        posted_date
+        }</span>
   </figure >
   <div class="px-0 py-2 flex gap-2">
     <div> 
@@ -69,10 +72,13 @@ const loadVideos = () =>{
  <div> 
  <h2 class="font-bold text-text text-xl">${video.title}</h2>
 <div class="flex gap-3"> <p class="text-gray text-sm">${video.authors[0].profile_name}</p>
-<img class="w-5 h-5 " src="https://img.icons8.com/?size=48&id=D9RtvkuOe31p&format=png">
+
+${video.authors[0].verified == true ? `<img class="w-5 h-5 " src="https://img.icons8.com/?size=48&id=D9RtvkuOe31p&format=png">
+` : ""}
+
 </div>
 
- <p class="text-gray text-xs">${video.others.views}      views</p>
+ <p class="text-gray text-xs">${video.others.views}   views</p>
 
     </div>
 
